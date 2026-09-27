@@ -7,8 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:extension": "node scripts/db-enable-pgvector.mjs",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
+    "db:setup": "npm run db:up && node scripts/wait-for-db.mjs && npm run db:extension && npm run db:push",
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
