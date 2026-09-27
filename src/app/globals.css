@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  /* Cool mist + ink + chrome-yellow — not cream/terracotta */
+  --paper: #e9eef4;
+  --paper-2: #dde5ee;
+  --ink: #0f1c2e;
+  --muted: #4a5a6d;
+  --line: #c5d0dc;
+  --accent: #c9a227;
+  --accent-soft: color-mix(in oklab, var(--accent) 22%, transparent);
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background:
+    radial-gradient(1100px 520px at 0% -5%, #cfdceb 0%, transparent 55%),
+    radial-gradient(800px 480px at 100% 0%, #d8e4d6 0%, transparent 45%),
+    linear-gradient(180deg, #eef2f7 0%, var(--paper) 40%);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
